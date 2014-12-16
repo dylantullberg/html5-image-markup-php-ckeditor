@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Image Editor</title>
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/paper-full.min.js"></script>
+        <link href="css/image-markup.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="css/spectrum.css" />
+    </head>
+    <body>
+        <div>
+            <div class="relative-toolbar">
+                 <div id="toolbar" style="display: none;">
+                    <div id="toolbar-container">
+                        <span class="select-icon img-tool" onclick="tb_select()" title="Move a layer"></span>            
+                        <span class="rectangle-icon img-tool" onclick="tb_rectangle()" title="Draw a rectangle"></span>            
+                        <span class="ellipse-icon img-tool" onclick="tb_ellipse()" title="Draw a ellipse"></span>
+                        <span class="line-icon img-tool" onclick="tb_line()" title="Draw a line"></span>
+                        <span class="arrow-icon img-tool" onclick="tb_arrow()" title="Draw an arrow"></span>
+                        <span class="pen-icon img-tool active-tool" onclick="tb_pen()" title="Draw a freeform line"></span>
+                        <span class="text-icon img-tool" onclick="tb_text()" title="Insert a text"></span>             
+                        <span class="eraser-icon img-tool" onclick="tb_erase()"  title="Delete a layer"></span>
+                        <span class="undo-icon img-tool" onclick="tb_undo()" title="Undoes the last action"></span>
+                        <span class="redo-icon img-tool" onclick="tb_redo()" title="Redoes the last action"></span>
+                        <span class="clear-all img-tool" onclick="tb_clear_all()" title="Clean all"></span>             
+                        <span class="save-as img-tool" onclick="tb_save_as()" title="Download the edited image"></span>             
+                        <input type='text' id="custom-color" />    
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div id="img-container" class="img-container" style="text-align: center;"><img id="img-editable" src="img/page-loader.gif" alt="Editable Image"/></div>
+            <div id="img-saving" style="display: none; text-align: center;"><img src="img/page-loader-saving.gif" alt="Please wait..." /></div>
+            <div id="img-loading" style="display: none; text-align: center;"><img src="img/page-loader.gif" alt="Please wait..." /></div>
+        </div>
+        <script src="js/CommandManager.js"></script>
+        <script type="text/javascript" src="js/image-markup.js"></script>
+        <script type="text/javascript" src="js/spectrum.js"></script>
+        <script type="text/javascript" src="js/lba_adaptor.js"></script>        
+    </body>
+</html>
